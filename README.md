@@ -1,6 +1,12 @@
 # Attractor Weather Web App
 
+## Mobile Preview
+
 ![Sample](./docs/sample.gif)
+
+## Desktop Preview
+
+![Sample](./docs/desktop.gif)
 
 This is the front end web app written with Next.js, Tailwind and Typescript for a Attactor weather app as a developer challenge.
 
