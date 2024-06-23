@@ -5,9 +5,11 @@ import { WeatherData } from "@/interfaces/WeatherData";
 import { FC, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-const WeatherAutocomplete: FC<{
+export interface WeatherAutoCompleteProps {
   weatherData: WeatherData[];
-}> = ({ weatherData }) => {
+}
+
+const WeatherAutocomplete: FC<WeatherAutoCompleteProps> = ({ weatherData }) => {
   const router = useRouter();
   const [items, setItems] = useState<WeatherData[]>([]);
   const [searchText, setSearchText] = useState("");

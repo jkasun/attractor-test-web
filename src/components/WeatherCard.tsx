@@ -2,10 +2,12 @@ import { WeatherData } from "@/interfaces/WeatherData";
 import { FC, useMemo } from "react";
 import Image from "next/image";
 
-const WeatherCard: FC<{
+interface WeatherCardProps {
   info: WeatherData;
-  onClick: () => void;
-}> = ({ info, onClick }) => {
+  onClick?: () => void;
+}
+
+const WeatherCard: FC<WeatherCardProps> = ({ info, onClick }) => {
   const image = useMemo(() => {
     switch (info.description) {
       case "Sunny":
@@ -33,7 +35,11 @@ const WeatherCard: FC<{
   }, [info.description]);
 
   return (
-    <div role="link" className={`px-8 py-6 rounded-[40px] grid grid-cols-2 cursor-pointer ${bgClass}`} onClick={onClick}>
+    <div
+      role="link"
+      className={`px-8 py-6 rounded-[40px] grid grid-cols-2 cursor-pointer ${bgClass}`}
+      onClick={onClick}
+    >
       <div>
         <div className="text-2xl"> {info.city} </div>
         <div> {info.description} </div>

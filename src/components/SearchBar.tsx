@@ -6,10 +6,12 @@ import Image from "next/image";
 import WeatherAutocomplete from "./WeatherAutoComplete";
 import Link from "next/link";
 
-const SearchBar: FC<{
+export interface SearchBarProps {
   weatherData: WeatherData[];
   hideTitle?: boolean;
-}> = ({ weatherData, hideTitle }) => {
+}
+
+const SearchBar: FC<SearchBarProps> = ({ weatherData, hideTitle }) => {
   return (
     <div>
       <div className="bg-white px-8 py-8 lg:bg-zinc-700 lg:text-white lg:px-[10%] lg:py-[60px]">

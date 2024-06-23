@@ -3,11 +3,11 @@ import { FC } from "react";
 import Image from "next/image";
 import { getImageByDescription } from "@/services/weather.service";
 
-const WeatherInfoCard: FC<{
-  weatherInfo: WeatherData
-}> = ({
-  weatherInfo
-}) => {
+export interface WeatherInfoCardProps {
+  weatherInfo: WeatherData;
+}
+
+const WeatherInfoCard: FC<WeatherInfoCardProps> = ({ weatherInfo }) => {
   const image = getImageByDescription(weatherInfo.description);
 
   return (
